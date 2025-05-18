@@ -1,6 +1,6 @@
 /* import fonts or other imports rules */
 
-/* to-do
+/* to-do check list
 1 ) add hover effect to all buttons
 2 ) add a Google font 
 */
@@ -8,9 +8,10 @@
 :root{
   --bg-color: #f0f0f0;
   --box-shadow: rgba(0,0,0,0.1);
-  --display-btn:  #4CAF50;
+  --display-btn: #4CAF50;
   --delete-btn: #f44336;
   --submit-btn: #2196F3;
+  --hover-brightness: 0.9;
 }
 
 *{
@@ -19,54 +20,91 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: var(--bg-color)
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    max-width: 35rem;
-    margin: 0 auto;
-  }
-  
-  .block {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px var(--box-shadow);
-  }
-  
-  button {
-    padding: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-  }
-  
-  #displayTodos {
-    background-color: var(--display-btn);
-    color: white;
-  }
-  
-  #submitTodo {
-    background-color: var(--submit-btn);
-    color: white;
-  }
-  
-  #deleteTodo {
-    background-color: var(--delete-btn);
-    color: white;
-  }
-  
-  input {
-    display: block;
-    margin: 5px 0;
-    padding: 8px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
+  font-family: "Times New Roman", Arial, sans-serif;
+  padding: 20px;
+  background-color: var(--bg-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 35rem;
+  margin: 0 auto;
+}
+
+.block {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--box-shadow);
+}
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  transition: filter 0.3s ease;
+}
+
+button:hover {
+  filter: brightness(var(--hover-brightness));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--box-shadow);
+}
+
+#displayTodos {
+  background-color: var(--display-btn);
+  color: white;
+}
+
+#submitTodo {
+  background-color: var(--submit-btn);
+  color: white;
+}
+
+#deleteTodo {
+  background-color: var(--delete-btn);
+  color: white;
+}
+
+input {
+  display: block;
+  margin: 5px 0;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Roboto', "Times New Roman", Arial, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', "Times New Roman", serif;
+  margin-bottom: 15px;
+}
+
+#todoDisplay {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.todo-item {
+  padding: 10px;
+  margin: 5px 0;
+  border-left: 4px solid var(--submit-btn);
+  background-color: #f9f9f9;
+}
+
+.priority-high {
+  border-left-color: var(--delete-btn);
+}
+
+.priority-medium {
+  border-left-color: #ff9800;
+}
+
+.priority-low {
+  border-left-color: var(--display-btn);
+}
