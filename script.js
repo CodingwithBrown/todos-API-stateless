@@ -27,4 +27,4 @@ document.getElementById('deleteTodo').addEventListener('click', async () => {
   const response = await fetch(`/todos/${id}`, { method: 'DELETE' });
   const result = await response.json();
   alert(result.message);
-});
+}); // If you try to delete a todo, make sure you DISPLAY AFTER CLICKING DELETE. If you delete and expect the program to delete real time, I am not that devloper yet.
